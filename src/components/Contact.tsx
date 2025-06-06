@@ -1,190 +1,199 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // Handle form submission
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-therapy-cream to-white">
+    <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-playfair font-semibold text-gray-900 mb-6">
-            Get In Touch
+          <h2 className="text-4xl lg:text-5xl font-bold text-law-navy mb-6">
+            Contact Us Today
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to begin your healing journey? Contact us today to schedule a consultation 
-            or learn more about our services.
+            Get expert employment law advice. Contact us for a free consultation 
+            and let us help you navigate your legal challenges.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-3 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-playfair font-semibold text-gray-900 mb-6">
-                Contact Information
-              </h3>
-              
+              <h3 className="text-2xl font-bold text-law-navy mb-6">Get In Touch</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-therapy-teal-light/20 rounded-full">
-                    <MapPin className="w-6 h-6 text-therapy-teal" />
-                  </div>
+                  <MapPin className="w-6 h-6 text-law-gold mt-1" />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Office Location</h4>
+                    <h4 className="font-semibold text-law-navy mb-1">Office Address</h4>
                     <p className="text-gray-600">
-                      123 Wellness Drive, Suite 200<br />
-                      Muslim Quarter, MC 12345
+                      123 Legal Quarter<br />
+                      London EC4M 7RF<br />
+                      United Kingdom
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-therapy-gold/20 rounded-full">
-                    <Phone className="w-6 h-6 text-therapy-gold" />
-                  </div>
+                  <Phone className="w-6 h-6 text-law-gold mt-1" />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Phone Number</h4>
-                    <p className="text-gray-600">(555) 123-4567</p>
-                    <p className="text-sm text-gray-500">Available 24/7 for emergencies</p>
+                    <h4 className="font-semibold text-law-navy mb-1">Phone</h4>
+                    <p className="text-gray-600">020 7123 4567</p>
+                    <p className="text-sm text-gray-500">24/7 Emergency Line</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-therapy-sage/30 rounded-full">
-                    <Mail className="w-6 h-6 text-therapy-sage" />
-                  </div>
+                  <Mail className="w-6 h-6 text-law-gold mt-1" />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email Address</h4>
-                    <p className="text-gray-600">info@muslimtherapy.com</p>
-                    <p className="text-sm text-gray-500">We respond within 24 hours</p>
+                    <h4 className="font-semibold text-law-navy mb-1">Email</h4>
+                    <p className="text-gray-600">info@employmentlawpractitioners.co.uk</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-therapy-teal/20 rounded-full">
-                    <Clock className="w-6 h-6 text-therapy-teal" />
-                  </div>
+                  <Clock className="w-6 h-6 text-law-gold mt-1" />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Office Hours</h4>
-                    <div className="text-gray-600">
-                      <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
-                      <p>Saturday: 10:00 AM - 6:00 PM</p>
-                      <p>Sunday: 12:00 PM - 5:00 PM</p>
-                    </div>
+                    <h4 className="font-semibold text-law-navy mb-1">Office Hours</h4>
+                    <p className="text-gray-600">
+                      Monday - Friday: 9:00 AM - 6:00 PM<br />
+                      Saturday: 10:00 AM - 2:00 PM<br />
+                      Sunday: Emergency only
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Emergency Contact */}
-            <div className="bg-red-50 border border-red-200 rounded-xl p-6">
-              <h4 className="font-semibold text-red-800 mb-2">Crisis Support</h4>
-              <p className="text-red-700 text-sm mb-3">
-                If you're experiencing a mental health emergency, please contact:
+            <div className="bg-law-navy text-white p-6 rounded-xl">
+              <h4 className="font-semibold mb-2">Free Consultation</h4>
+              <p className="text-sm text-gray-300 mb-4">
+                Get expert legal advice for your employment matter. No obligation, completely confidential.
               </p>
-              <div className="space-y-1 text-sm">
-                <p className="text-red-800 font-semibold">Crisis Hotline: 988</p>
-                <p className="text-red-700">Emergency Services: 911</p>
-              </div>
+              <button className="bg-law-gold text-law-navy px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-semibold">
+                Book Now
+              </button>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h3 className="text-2xl font-playfair font-semibold text-gray-900 mb-6">
-              Send Us a Message
-            </h3>
-            
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name *
-                  </label>
-                  <Input 
-                    type="text" 
-                    placeholder="Your first name"
-                    className="w-full"
-                  />
+          <div className="lg:col-span-2">
+            <div className="bg-law-gray rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-law-navy mb-6">Send Us a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-semibold text-law-navy mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-law-gold focus:outline-none"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-law-navy mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-law-gold focus:outline-none"
+                      required
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name *
-                  </label>
-                  <Input 
-                    type="text" 
-                    placeholder="Your last name"
-                    className="w-full"
-                  />
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-semibold text-law-navy mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-law-gold focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-semibold text-law-navy mb-2">
+                      Subject *
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-law-gold focus:outline-none"
+                      required
+                    >
+                      <option value="">Select a subject</option>
+                      <option value="unfair-dismissal">Unfair Dismissal</option>
+                      <option value="discrimination">Discrimination</option>
+                      <option value="contract-review">Contract Review</option>
+                      <option value="tribunal-representation">Tribunal Representation</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
-                </label>
-                <Input 
-                  type="email" 
-                  placeholder="your.email@example.com"
-                  className="w-full"
-                />
-              </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-law-navy mb-2">
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={6}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-law-gold focus:outline-none resize-none"
+                    placeholder="Please describe your legal matter in detail..."
+                    required
+                  ></textarea>
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </label>
-                <Input 
-                  type="tel" 
-                  placeholder="(555) 123-4567"
-                  className="w-full"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Service of Interest
-                </label>
-                <select className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-therapy-teal focus:border-transparent">
-                  <option>Select a service...</option>
-                  <option>Individual Therapy</option>
-                  <option>Couples Counseling</option>
-                  <option>Family Therapy</option>
-                  <option>Group Therapy</option>
-                  <option>Youth & Adolescent</option>
-                  <option>Spiritual Counseling</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <Textarea 
-                  placeholder="Please tell us a bit about what brings you here and how we can help..."
-                  rows={4}
-                  className="w-full"
-                />
-              </div>
-
-              <div className="text-sm text-gray-600">
-                <p>
-                  By submitting this form, you consent to us contacting you about our services. 
-                  Your information is kept confidential and secure.
-                </p>
-              </div>
-
-              <Button 
-                type="submit"
-                className="w-full bg-therapy-teal hover:bg-therapy-teal-light text-white py-3 text-lg flex items-center justify-center space-x-2"
-              >
-                <Send className="w-5 h-5" />
-                <span>Send Message</span>
-              </Button>
-            </form>
+                <button
+                  type="submit"
+                  className="bg-law-navy text-white px-8 py-4 rounded-lg hover:bg-law-navy-light transition-colors duration-200 font-semibold flex items-center"
+                >
+                  Send Message
+                  <Send className="ml-2 w-5 h-5" />
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

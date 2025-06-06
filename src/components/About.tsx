@@ -1,95 +1,84 @@
 
 import React from 'react';
-import { Award, GraduationCap, Heart, Users } from 'lucide-react';
+import { Award, Users, Clock, Target } from 'lucide-react';
 
 const About = () => {
+  const values = [
+    {
+      icon: Award,
+      title: 'Excellence',
+      description: 'Committed to delivering the highest standard of legal representation.'
+    },
+    {
+      icon: Users,
+      title: 'Client-Focused',
+      description: 'Your success is our priority. We work tirelessly for the best outcomes.'
+    },
+    {
+      icon: Clock,
+      title: 'Responsive',
+      description: 'Quick response times and regular updates throughout your case.'
+    },
+    {
+      icon: Target,
+      title: 'Results-Driven',
+      description: 'Proven track record of successful outcomes for our clients.'
+    }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-therapy-cream to-white">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Content */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-4xl md:text-5xl font-playfair font-semibold text-gray-900 mb-6">
-                About Muslim Therapy
+              <h2 className="text-4xl lg:text-5xl font-bold text-law-navy mb-6">
+                Leading Employment Law Expertise
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                We understand that mental health care is most effective when it aligns with your 
-                cultural values and spiritual beliefs. Our team of licensed professionals combines 
-                evidence-based therapeutic approaches with deep respect for Islamic principles.
+              <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                Employment Law Practitioners has been at the forefront of UK employment law for over two decades. 
+                Our team of specialist solicitors provides expert legal advice and representation to both 
+                employees and employers across all aspects of employment law.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                We understand that employment disputes can be stressful and complex. That's why we're committed 
+                to providing clear, practical advice and strong representation to achieve the best possible 
+                outcomes for our clients.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-therapy-teal-light/20 rounded-full mt-1">
-                  <Heart className="w-6 h-6 text-therapy-teal" />
+            <div className="grid sm:grid-cols-2 gap-6">
+              {values.map((value, index) => (
+                <div key={index} className="flex items-start space-x-4">
+                  <div className="bg-law-gold p-3 rounded-lg flex-shrink-0">
+                    <value.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-law-navy mb-2">{value.title}</h4>
+                    <p className="text-sm text-gray-600">{value.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Culturally Competent Care</h3>
-                  <p className="text-gray-600">
-                    Our therapists understand the unique challenges faced by the Muslim community 
-                    and provide care that respects your cultural and religious identity.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-therapy-gold/20 rounded-full mt-1">
-                  <Award className="w-6 h-6 text-therapy-gold" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Licensed Professionals</h3>
-                  <p className="text-gray-600">
-                    All our therapists are licensed mental health professionals with specialized 
-                    training in working with Muslim clients and faith-integrated therapy.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="p-3 bg-therapy-sage/30 rounded-full mt-1">
-                  <Users className="w-6 h-6 text-therapy-sage" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Community Focused</h3>
-                  <p className="text-gray-600">
-                    We work closely with local mosques, Islamic centers, and community leaders 
-                    to provide comprehensive support for mental health and spiritual wellness.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
+
+            <button className="bg-law-navy text-white px-8 py-4 rounded-lg hover:bg-law-navy-light transition-colors duration-200 font-semibold">
+              Meet Our Team
+            </button>
           </div>
 
+          {/* Image */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="space-y-6">
-                <img 
-                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                  alt="Professional therapy office"
-                  className="rounded-xl shadow-lg w-full h-48 object-cover"
-                />
-                <div className="bg-therapy-teal text-white p-6 rounded-xl">
-                  <h4 className="text-2xl font-bold mb-2">500+</h4>
-                  <p className="text-therapy-cream">Clients Served</p>
-                </div>
-              </div>
-              <div className="space-y-6 mt-8">
-                <div className="bg-therapy-gold text-white p-6 rounded-xl">
-                  <h4 className="text-2xl font-bold mb-2">15+</h4>
-                  <p className="text-therapy-gold-light">Years Experience</p>
-                </div>
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                  alt="Diverse therapy team"
-                  className="rounded-xl shadow-lg w-full h-48 object-cover"
-                />
-              </div>
+            <div className="bg-law-gray rounded-2xl p-8">
+              <img
+                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=600&h=400&fit=crop"
+                alt="Professional law office"
+                className="w-full h-80 object-cover rounded-xl"
+              />
             </div>
-
-            {/* Floating credential badge */}
-            <div className="absolute -top-6 -right-6 bg-white p-4 rounded-full shadow-xl border-4 border-therapy-cream">
-              <GraduationCap className="w-8 h-8 text-therapy-teal" />
+            <div className="absolute -top-8 -right-8 bg-law-gold text-white p-6 rounded-xl shadow-lg">
+              <div className="text-2xl font-bold">25+</div>
+              <div className="text-sm">Years Experience</div>
             </div>
           </div>
         </div>

@@ -1,86 +1,87 @@
 
 import React, { useState } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Menu, X, Scale, Phone } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Services', href: '#services' },
-    { label: 'About', href: '#about' },
-    { label: 'Resources', href: '#resources' },
-    { label: 'Contact', href: '#contact' }
+  const navigationItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'Services', href: '#services' },
+    { name: 'About', href: '#about' },
+    { name: 'Team', href: '#team' },
+    { name: 'Resources', href: '#resources' },
+    { name: 'Contact', href: '#contact' }
   ];
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        {/* Top bar with contact info */}
-        <div className="hidden md:flex justify-end items-center py-2 text-sm text-therapy-teal border-b border-therapy-cream">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Phone size={14} />
-              <span>(555) 123-4567</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail size={14} />
-              <span>info@muslimtherapy.com</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Main navigation */}
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
-            <h1 className="text-2xl md:text-3xl font-playfair font-semibold text-therapy-teal">
-              Muslim Therapy
-            </h1>
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <div className="bg-law-navy p-2 rounded-lg">
+              <Scale className="w-8 h-8 text-white" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-law-navy">Employment Law</h1>
+              <p className="text-sm text-gray-600">Practitioners</p>
+            </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+          {/* Navigation - Desktop */}
+          <nav className="hidden lg:flex space-x-8">
+            {navigationItems.map((item) => (
               <a
-                key={item.label}
+                key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-therapy-teal transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-law-navy font-medium transition-colors duration-200"
               >
-                {item.label}
+                {item.name}
               </a>
             ))}
-            <Button className="bg-therapy-teal hover:bg-therapy-teal-light text-white px-6 py-2">
-              Book Consultation
-            </Button>
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Contact Info & CTA */}
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-center space-x-2 text-law-navy">
+              <Phone className="w-4 h-4" />
+              <span className="font-medium">020 7123 4567</span>
+            </div>
+            <button className="bg-law-gold text-white px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-medium">
+              Free Consultation
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 text-law-navy"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-therapy-cream">
+          <div className="lg:hidden py-4 border-t border-gray-200">
             <nav className="flex flex-col space-y-4">
-              {navItems.map((item) => (
+              {navigationItems.map((item) => (
                 <a
-                  key={item.label}
+                  key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-therapy-teal transition-colors duration-200 font-medium"
+                  className="text-gray-700 hover:text-law-navy font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
+                  {item.name}
                 </a>
               ))}
-              <Button className="bg-therapy-teal hover:bg-therapy-teal-light text-white w-full mt-4">
-                Book Consultation
-              </Button>
+              <div className="pt-4 border-t border-gray-200">
+                <p className="text-law-navy font-medium mb-2">020 7123 4567</p>
+                <button className="bg-law-gold text-white px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-medium w-full">
+                  Free Consultation
+                </button>
+              </div>
             </nav>
           </div>
         )}

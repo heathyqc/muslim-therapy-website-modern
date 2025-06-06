@@ -1,56 +1,57 @@
+
 import React from 'react';
-import { Users, Heart, Brain, Home, Baby } from 'lucide-react';
+import { Briefcase, Users, FileText, Scale, Shield, AlertTriangle } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
-      icon: Brain,
-      title: 'Individual Therapy',
-      description: 'One-on-one counseling sessions tailored to your unique needs, incorporating Islamic principles and values.',
-      features: ['Anxiety & Depression', 'Trauma Recovery', 'Life Transitions', 'Identity & Faith']
-    },
-    {
-      icon: Heart,
-      title: 'Couples Counseling',
-      description: 'Strengthen your marriage through Islamic guidance and professional therapeutic techniques.',
-      features: ['Communication Skills', 'Conflict Resolution', 'Islamic Marriage Principles', 'Intimacy & Connection']
-    },
-    {
-      icon: Home,
-      title: 'Family Therapy',
-      description: 'Healing and growth for the entire family unit, respecting Islamic family structures.',
-      features: ['Parent-Child Relationships', 'Extended Family Dynamics', 'Cultural Integration', 'Generational Healing']
+      icon: Briefcase,
+      title: 'Unfair Dismissal',
+      description: 'Expert representation for wrongful termination cases, ensuring your rights are protected.',
+      features: ['Constructive dismissal', 'Redundancy claims', 'Disciplinary procedures', 'Settlement negotiations']
     },
     {
       icon: Users,
-      title: 'Group Therapy',
-      description: 'Connect with others in your community facing similar challenges in a supportive environment.',
-      features: ['Support Groups', 'Skills Training', 'Community Building', 'Shared Experiences']
+      title: 'Discrimination Claims',
+      description: 'Fighting workplace discrimination based on protected characteristics.',
+      features: ['Age discrimination', 'Disability discrimination', 'Gender discrimination', 'Race discrimination']
     },
     {
-      icon: Baby,
-      title: 'Youth & Adolescent',
-      description: 'Specialized care for young Muslims navigating identity, faith, and modern challenges.',
-      features: ['Identity Development', 'Academic Stress', 'Peer Relationships', 'Faith & Culture']
+      icon: FileText,
+      title: 'Employment Contracts',
+      description: 'Comprehensive contract review and drafting services for employers and employees.',
+      features: ['Contract negotiation', 'Terms review', 'Non-compete clauses', 'Severance packages']
     },
     {
-      icon: Heart,
-      title: 'Spiritual Counseling',
-      description: 'Integrate your spiritual beliefs with mental health care for holistic healing.',
-      features: ['Faith-Based Healing', 'Spiritual Growth', 'Religious Struggles', 'Purpose & Meaning']
+      icon: Scale,
+      title: 'Employment Tribunals',
+      description: 'Expert representation at employment tribunals with proven success rates.',
+      features: ['Tribunal preparation', 'Legal representation', 'Evidence gathering', 'Appeal procedures']
+    },
+    {
+      icon: Shield,
+      title: 'Whistleblowing',
+      description: 'Protection for employees reporting wrongdoing in the workplace.',
+      features: ['Protected disclosures', 'Detriment claims', 'Confidential advice', 'Legal protection']
+    },
+    {
+      icon: AlertTriangle,
+      title: 'Workplace Harassment',
+      description: 'Addressing bullying and harassment in the workplace with sensitive approach.',
+      features: ['Harassment claims', 'Bullying incidents', 'Hostile environment', 'Preventive measures']
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-law-gray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-playfair font-semibold text-gray-900 mb-6">
-            Our Services
+          <h2 className="text-4xl lg:text-5xl font-bold text-law-navy mb-6">
+            Our Legal Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive mental health services designed to honor your faith while promoting 
-            healing, growth, and well-being for individuals, couples, and families.
+            Comprehensive employment law services for both employees and employers, 
+            delivered with expertise, integrity, and unwavering commitment to justice.
           </p>
         </div>
 
@@ -58,13 +59,13 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-therapy-cream rounded-xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
             >
               <div className="mb-6">
-                <div className="w-16 h-16 bg-therapy-teal rounded-full flex items-center justify-center mb-4 group-hover:bg-therapy-teal-light transition-colors duration-300">
+                <div className="w-16 h-16 bg-law-navy rounded-full flex items-center justify-center mb-4 group-hover:bg-law-gold transition-colors duration-300">
                   <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-playfair font-semibold text-gray-900 mb-3">
+                <h3 className="text-2xl font-bold text-law-navy mb-3">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
@@ -75,14 +76,14 @@ const Services = () => {
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-sm text-gray-700">
-                    <div className="w-2 h-2 bg-therapy-gold rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-law-gold rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 pt-6 border-t border-therapy-gold/20">
-                <button className="text-therapy-teal font-semibold hover:text-therapy-teal-light transition-colors duration-200">
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <button className="text-law-navy font-semibold hover:text-law-gold transition-colors duration-200">
                   Learn More →
                 </button>
               </div>

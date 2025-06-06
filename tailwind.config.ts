@@ -63,13 +63,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				therapy: {
-					teal: '#0D7377',
-					'teal-light': '#14A085',
-					gold: '#D4AF37',
-					'gold-light': '#F4E185',
-					cream: '#FAF7F0',
-					sage: '#9CAF88'
+				law: {
+					navy: '#1e3a8a',
+					'navy-light': '#3b82f6',
+					gold: '#d97706',
+					'gold-dark': '#b45309',
+					gray: '#f8fafc',
+					accent: '#0ea5e9'
 				}
 			},
 			fontFamily: {

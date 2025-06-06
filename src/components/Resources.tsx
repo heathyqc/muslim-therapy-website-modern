@@ -1,110 +1,119 @@
 
 import React from 'react';
-import { BookOpen, Video, Headphones, Download } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { FileText, Download, ExternalLink, Calendar } from 'lucide-react';
 
 const Resources = () => {
   const resources = [
     {
-      icon: BookOpen,
-      title: 'Islamic Mental Health Articles',
-      description: 'Evidence-based articles on mental health from an Islamic perspective.',
-      type: 'Articles',
-      count: '25+ Resources'
+      title: 'Employee Rights Guide',
+      description: 'Comprehensive guide to understanding your rights in the workplace.',
+      type: 'PDF Guide',
+      date: 'Updated Dec 2024',
+      icon: FileText
     },
     {
-      icon: Video,
-      title: 'Guided Meditation Videos',
-      description: 'Islamic mindfulness and meditation practices for stress reduction.',
-      type: 'Videos',
-      count: '15+ Sessions'
+      title: 'Dismissal Procedures Checklist',
+      description: 'Essential checklist for employers handling dismissal procedures.',
+      type: 'Checklist',
+      date: 'Updated Nov 2024',
+      icon: Download
     },
     {
-      icon: Headphones,
-      title: 'Mental Health Podcasts',
-      description: 'Expert discussions on mental health topics relevant to Muslims.',
-      type: 'Podcasts',
-      count: '30+ Episodes'
+      title: 'Latest Employment Law Updates',
+      description: 'Recent changes to UK employment legislation and their implications.',
+      type: 'Article',
+      date: 'Published Dec 2024',
+      icon: ExternalLink
     },
     {
-      icon: Download,
-      title: 'Self-Care Worksheets',
-      description: 'Downloadable resources for personal reflection and growth.',
-      type: 'Worksheets',
-      count: '20+ Tools'
+      title: 'Discrimination in the Workplace',
+      description: 'Understanding different types of workplace discrimination and remedies.',
+      type: 'Guide',
+      date: 'Updated Oct 2024',
+      icon: FileText
+    }
+  ];
+
+  const events = [
+    {
+      title: 'Employment Law Webinar',
+      date: 'January 15, 2025',
+      time: '2:00 PM - 3:30 PM',
+      description: 'Latest updates in UK employment law for 2025'
+    },
+    {
+      title: 'Free Legal Clinic',
+      date: 'January 22, 2025',
+      time: '10:00 AM - 4:00 PM',
+      description: 'Free 30-minute consultations for employment issues'
     }
   ];
 
   return (
-    <section id="resources" className="py-20 bg-white">
+    <section id="resources" className="py-20 bg-law-gray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-playfair font-semibold text-gray-900 mb-6">
-            Mental Health Resources
+          <h2 className="text-4xl lg:text-5xl font-bold text-law-navy mb-6">
+            Legal Resources & Events
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Access our curated collection of Islamic mental health resources to support 
-            your journey of healing and personal growth.
+            Stay informed with our latest guides, updates, and upcoming events 
+            designed to help you navigate employment law matters.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {resources.map((resource, index) => (
-            <div 
-              key={index}
-              className="group bg-therapy-cream rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <div className="w-14 h-14 bg-therapy-teal rounded-lg flex items-center justify-center mb-4 group-hover:bg-therapy-teal-light transition-colors duration-300">
-                <resource.icon className="w-7 h-7 text-white" />
-              </div>
-              
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {resource.title}
-              </h3>
-              
-              <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                {resource.description}
-              </p>
-              
-              <div className="flex justify-between items-center">
-                <span className="text-therapy-teal font-semibold text-sm">
-                  {resource.count}
-                </span>
-                <span className="bg-therapy-gold/20 text-therapy-gold px-3 py-1 rounded-full text-xs font-medium">
-                  {resource.type}
-                </span>
-              </div>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Resources */}
+          <div className="lg:col-span-2">
+            <h3 className="text-2xl font-bold text-law-navy mb-6">Latest Resources</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {resources.map((resource, index) => (
+                <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-law-navy p-3 rounded-lg flex-shrink-0">
+                      <resource.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-semibold text-law-gold uppercase tracking-wide">
+                          {resource.type}
+                        </span>
+                        <span className="text-xs text-gray-500">{resource.date}</span>
+                      </div>
+                      <h4 className="font-semibold text-law-navy mb-2">{resource.title}</h4>
+                      <p className="text-sm text-gray-600 mb-4">{resource.description}</p>
+                      <button className="text-law-navy hover:text-law-gold transition-colors duration-200 text-sm font-semibold">
+                        Download →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Featured Resource */}
-        <div className="bg-gradient-to-r from-therapy-teal to-therapy-teal-light rounded-2xl p-8 md:p-12 text-white">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl font-playfair font-semibold mb-4">
-                Free Mental Health Guide
-              </h3>
-              <p className="text-therapy-cream text-lg leading-relaxed mb-6">
-                Download our comprehensive guide: "Mental Health in Islam: A Holistic Approach to 
-                Wellness." This 40-page resource covers everything from Islamic perspectives on 
-                mental health to practical coping strategies.
-              </p>
-              <Button 
-                className="bg-white text-therapy-teal hover:bg-therapy-cream transition-colors duration-200 px-8 py-3"
-              >
-                Download Free Guide
-              </Button>
-            </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Mental health guide book"
-                className="rounded-xl shadow-2xl"
-              />
-              <div className="absolute -top-4 -right-4 bg-therapy-gold text-white px-4 py-2 rounded-full font-semibold text-sm">
-                FREE
-              </div>
+          {/* Events */}
+          <div>
+            <h3 className="text-2xl font-bold text-law-navy mb-6">Upcoming Events</h3>
+            <div className="space-y-6">
+              {events.map((event, index) => (
+                <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-law-gold p-3 rounded-lg flex-shrink-0">
+                      <Calendar className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-law-navy mb-2">{event.title}</h4>
+                      <p className="text-sm text-gray-600 mb-1">{event.date}</p>
+                      <p className="text-sm text-gray-600 mb-3">{event.time}</p>
+                      <p className="text-sm text-gray-700 mb-4">{event.description}</p>
+                      <button className="bg-law-navy text-white px-4 py-2 rounded-lg hover:bg-law-navy-light transition-colors duration-200 text-sm font-semibold">
+                        Register Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

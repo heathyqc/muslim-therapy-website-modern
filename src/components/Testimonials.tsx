@@ -5,80 +5,79 @@ import { Star, Quote } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Aisha M.",
-      role: "Individual Therapy Client",
-      content: "Finding a therapist who understood both my faith and my struggles was life-changing. The care I received here helped me heal while staying true to my Islamic values.",
-      rating: 5
+      name: 'James Morrison',
+      role: 'Marketing Manager',
+      company: 'Tech Solutions Ltd',
+      content: 'Employment Law Practitioners helped me through a difficult unfair dismissal case. Their expertise and support were invaluable, and we achieved an excellent settlement.',
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop'
     },
     {
-      name: "Omar & Fatima K.",
-      role: "Couples Counseling",
-      content: "Our marriage was strengthened through counseling that honored our Islamic principles. We learned better communication while deepening our spiritual connection.",
-      rating: 5
+      name: 'Lisa Thompson',
+      role: 'HR Director',
+      company: 'Global Manufacturing',
+      content: 'As an employer, we rely on their guidance for complex employment matters. Their practical advice has helped us avoid costly disputes and maintain good employee relations.',
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1494790108755-2616b6bb8534?w=150&h=150&fit=crop'
     },
     {
-      name: "Zainab A.",
-      role: "Family Therapy",
-      content: "The family therapy sessions helped us navigate cultural differences between generations. Our therapist understood the unique challenges Muslim families face.",
-      rating: 5
+      name: 'David Kumar',
+      role: 'Software Developer',
+      company: 'Innovation Hub',
+      content: 'They successfully handled my discrimination case with professionalism and compassion. I felt supported throughout the entire process and the outcome exceeded my expectations.',
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop'
     }
   ];
 
   return (
-    <section className="py-20 bg-therapy-teal text-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-playfair font-semibold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-law-navy mb-6">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-therapy-cream max-w-3xl mx-auto leading-relaxed">
-            Real stories from real people who found healing and growth through our services.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Don't just take our word for it. Here's what our clients have to say about 
+            our employment law services and the results we've achieved together.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all duration-300"
-            >
-              <div className="mb-6">
-                <Quote className="w-8 h-8 text-therapy-gold mb-4" />
-                <div className="flex space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-therapy-gold text-therapy-gold" />
-                  ))}
-                </div>
+            <div key={index} className="bg-law-gray rounded-xl p-8 relative">
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-law-gold opacity-50" />
+              
+              <div className="flex items-center mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-law-gold fill-current" />
+                ))}
               </div>
 
-              <p className="text-therapy-cream leading-relaxed mb-6 text-lg">
+              <p className="text-gray-700 leading-relaxed mb-6">
                 "{testimonial.content}"
               </p>
 
-              <div className="border-t border-white/20 pt-6">
-                <h4 className="font-semibold text-white text-lg">
-                  {testimonial.name}
-                </h4>
-                <p className="text-therapy-cream text-sm">
-                  {testimonial.role}
-                </p>
+              <div className="flex items-center space-x-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <div className="font-semibold text-law-navy">{testimonial.name}</div>
+                  <div className="text-sm text-gray-600">{testimonial.role}</div>
+                  <div className="text-sm text-law-gold">{testimonial.company}</div>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <div className="inline-flex items-center space-x-4 bg-white/10 rounded-full px-8 py-4">
-            <div className="flex space-x-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-therapy-gold text-therapy-gold" />
-              ))}
-            </div>
-            <div className="border-l border-white/30 pl-4">
-              <p className="text-white font-semibold">4.9/5 Average Rating</p>
-              <p className="text-therapy-cream text-sm">Based on 200+ reviews</p>
-            </div>
-          </div>
+          <button className="bg-law-gold text-white px-8 py-4 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-semibold">
+            Read More Reviews
+          </button>
         </div>
       </div>
     </section>
