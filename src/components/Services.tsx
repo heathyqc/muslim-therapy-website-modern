@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Users, Heart, Brain, Home, Couple, Baby } from 'lucide-react';
+import { Users, Heart, Brain, Home, Baby } from 'lucide-react';
 
 const Services = () => {
   const services = [
@@ -11,7 +10,7 @@ const Services = () => {
       features: ['Anxiety & Depression', 'Trauma Recovery', 'Life Transitions', 'Identity & Faith']
     },
     {
-      icon: Couple,
+      icon: Heart,
       title: 'Couples Counseling',
       description: 'Strengthen your marriage through Islamic guidance and professional therapeutic techniques.',
       features: ['Communication Skills', 'Conflict Resolution', 'Islamic Marriage Principles', 'Intimacy & Connection']
