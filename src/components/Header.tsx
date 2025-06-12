@@ -46,7 +46,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-law-navy">
               <Phone className="w-4 h-4" />
-              <span className="font-medium">020 7123 4567</span>
+              <span className="font-medium">0161 505 1736</span>
             </div>
             <button className="bg-law-gold text-white px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-medium">
               Free Consultation
@@ -77,7 +77,7 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-4 border-t border-gray-200">
-                <p className="text-law-navy font-medium mb-2">020 7123 4567</p>
+                <p className="text-law-navy font-medium mb-2">0161 505 1736</p>
                 <button className="bg-law-gold text-white px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-medium w-full">
                   Free Consultation
                 </button>

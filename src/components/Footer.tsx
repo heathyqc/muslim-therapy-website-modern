@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-3 text-sm">
                 <Phone className="w-4 h-4 text-law-gold" />
-                <span>020 7123 4567</span>
+                <span>0161 505 1736</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="w-4 h-4 text-law-gold" />
@@ -51,7 +51,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="w-4 h-4 text-law-gold" />
-                <span>123 Legal Quarter, London EC4M 7RF</span>
+                <span>ELP, Ancoats Street, Manchester, Lancashire M4 6DN</span>
               </div>
             </div>
           </div>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
@@ -48,8 +47,11 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-law-navy mb-1">Office Address</h4>
                     <p className="text-gray-600">
-                      123 Legal Quarter<br />
-                      London EC4M 7RF<br />
+                      ELP<br />
+                      Ancoats Street<br />
+                      Manchester<br />
+                      Lancashire<br />
+                      M4 6DN<br />
                       United Kingdom
                     </p>
                   </div>
@@ -59,7 +61,7 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-law-gold mt-1" />
                   <div>
                     <h4 className="font-semibold text-law-navy mb-1">Phone</h4>
-                    <p className="text-gray-600">020 7123 4567</p>
+                    <p className="text-gray-600">0161 505 1736</p>
                     <p className="text-sm text-gray-500">24/7 Emergency Line</p>
                   </div>
                 </div>
