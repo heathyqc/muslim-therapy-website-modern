@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="w-4 h-4 text-law-gold" />
-                <span>info@employmentlawpractitioners.co.uk</span>
+                <span>admin@employmentlawpractitioners.co.uk</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="w-4 h-4 text-law-gold" />
@@ -89,7 +89,7 @@ const Footer = () => {
           {/* Legal Info */}
           <div>
             <h4 className="text-lg font-semibold mb-6">Legal Information</h4>
-            <ul className="space-y-3 mb-6">
+            <ul className="space-y-3">
               {legalPages.map((page, index) => (
                 <li key={index}>
                   <a 
@@ -101,15 +101,6 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-            <div className="bg-law-navy-light p-4 rounded-lg">
-              <p className="text-xs text-gray-300 mb-2">
-                Regulated by the Solicitors Regulation Authority
-              </p>
-              <div className="flex items-center space-x-2">
-                <span className="text-xs text-gray-400">SRA Number:</span>
-                <span className="text-xs text-law-gold font-semibold">123456</span>
-              </div>
-            </div>
           </div>
         </div>
 
