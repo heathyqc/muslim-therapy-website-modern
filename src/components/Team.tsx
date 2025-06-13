@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, Award } from 'lucide-react';
 
@@ -15,10 +14,10 @@ const Team = () => {
     },
     {
       name: 'Michael Chen',
-      title: 'Partner',
-      speciality: 'Discrimination & Harassment',
+      title: 'Barrister',
+      speciality: 'Employment Law & Tribunal Advocacy',
       experience: '12 years',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=300&h=400&fit=crop',
       email: 'michael.chen@employmentlawpractitioners.co.uk',
       phone: '020 7123 4569'
     },
