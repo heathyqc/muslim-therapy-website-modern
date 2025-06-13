@@ -12,15 +12,6 @@ const Footer = () => {
     'Workplace Harassment'
   ];
 
-  const legalPages = [
-    'Privacy Policy',
-    'Terms of Service',
-    'Cookie Policy',
-    'Complaints Procedure',
-    'Professional Standards',
-    'Regulatory Information'
-  ];
-
   return (
     <footer className="bg-law-navy text-white py-16">
       <div className="container mx-auto px-4">
@@ -81,27 +72,11 @@ const Footer = () => {
               <li><a href="#team" className="text-gray-300 hover:text-law-gold transition-colors duration-200 text-sm">Our Team</a></li>
               <li><a href="#resources" className="text-gray-300 hover:text-law-gold transition-colors duration-200 text-sm">Resources</a></li>
               <li><a href="#contact" className="text-gray-300 hover:text-law-gold transition-colors duration-200 text-sm">Contact</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-law-gold transition-colors duration-200 text-sm">Case Studies</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-law-gold transition-colors duration-200 text-sm">News & Updates</a></li>
             </ul>
           </div>
 
-          {/* Legal Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Legal Information</h4>
-            <ul className="space-y-3">
-              {legalPages.map((page, index) => (
-                <li key={index}>
-                  <a 
-                    href="#" 
-                    className="text-gray-300 hover:text-law-gold transition-colors duration-200 text-sm"
-                  >
-                    {page}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Legal Info - Column removed since all items were to be deleted */}
+          <div></div>
         </div>
 
         <div className="border-t border-law-navy-light mt-12 pt-8">
