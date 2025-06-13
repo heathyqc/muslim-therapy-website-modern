@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Shield, Award, Users, Eye } from 'lucide-react';
+import { ArrowRight, Award, Users, Eye } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -30,14 +30,7 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-law-navy-light">
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-2">
-                  <Shield className="w-6 h-6 text-law-gold" />
-                </div>
-                <div className="text-2xl font-bold">25+</div>
-                <div className="text-sm text-gray-300">Years Experience</div>
-              </div>
+            <div className="grid grid-cols-2 gap-6 pt-8 border-t border-law-navy-light">
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Award className="w-6 h-6 text-law-gold" />
