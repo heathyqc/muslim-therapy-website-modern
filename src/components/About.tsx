@@ -61,10 +61,6 @@ const About = () => {
                 </div>
               ))}
             </div>
-
-            <button className="bg-law-navy text-white px-8 py-4 rounded-lg hover:bg-law-navy-light transition-colors duration-200 font-semibold">
-              Meet Our Team
-            </button>
           </div>
 
           {/* Image */}
