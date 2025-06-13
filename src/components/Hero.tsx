@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Shield, Award, Users } from 'lucide-react';
+import { ArrowRight, Shield, Award, Users, Eye } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -58,11 +58,16 @@ const Hero = () => {
           {/* Image */}
           <div className="relative">
             <div className="bg-law-gray rounded-2xl p-8 shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
-                alt="Professional lawyer consultation"
-                className="w-full h-96 object-cover rounded-xl"
-              />
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=600&fit=crop"
+                  alt="Professional lawyer consultation"
+                  className="w-full h-96 object-cover rounded-xl"
+                />
+                <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                  <Eye className="w-6 h-6 text-white" />
+                </div>
+              </div>
               <div className="absolute -bottom-4 -right-4 bg-law-gold text-law-navy p-4 rounded-xl shadow-lg">
                 <div className="text-sm font-semibold">Free Consultation</div>
                 <div className="text-xs">Available 24/7</div>
