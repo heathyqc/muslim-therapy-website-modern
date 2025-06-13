@@ -60,7 +60,7 @@ const Hero = () => {
             <div className="bg-law-gray rounded-2xl p-8 shadow-2xl">
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+                  src="/lovable-uploads/24d0ebe6-0159-4f2c-b06e-d11d62a8581c.png"
                   alt="Professional lawyer consultation"
                   className="w-full h-96 object-cover rounded-xl"
                 />
