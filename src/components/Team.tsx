@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Mail, Phone, Award } from 'lucide-react';
 
@@ -10,7 +11,7 @@ const Team = () => {
       experience: '15 years',
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=400&fit=crop',
       email: 'sarah.johnson@employmentlawpractitioners.co.uk',
-      phone: '020 7123 4568'
+      phone: '0161 505 1736'
     },
     {
       name: 'Michael Chen',
@@ -19,7 +20,7 @@ const Team = () => {
       experience: '12 years',
       image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=300&h=400&fit=crop',
       email: 'michael.chen@employmentlawpractitioners.co.uk',
-      phone: '020 7123 4569'
+      phone: '0161 505 1736'
     },
     {
       name: 'Emma Williams',
@@ -28,7 +29,7 @@ const Team = () => {
       experience: '8 years',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=400&fit=crop',
       email: 'emma.williams@employmentlawpractitioners.co.uk',
-      phone: '020 7123 4570'
+      phone: '0161 505 1736'
     }
   ];
 
