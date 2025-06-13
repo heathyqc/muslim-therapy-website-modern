@@ -73,12 +73,6 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <button className="bg-law-gold text-white px-8 py-4 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-semibold">
-            Read More Reviews
-          </button>
-        </div>
       </div>
     </section>
   );
