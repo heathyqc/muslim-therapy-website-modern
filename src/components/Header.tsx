@@ -14,6 +14,14 @@ const Header = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
+  const handleConsultationClick = () => {
+    window.location.href = 'mailto:admin@employmentlawpractitioners.co.uk?subject=Free Consultation Request';
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:01615051736';
+  };
+
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4">
@@ -44,11 +52,14 @@ const Header = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-law-navy">
+            <div className="flex items-center space-x-2 text-law-navy cursor-pointer" onClick={handlePhoneClick}>
               <Phone className="w-4 h-4" />
               <span className="font-medium">0161 505 1736</span>
             </div>
-            <button className="bg-law-gold text-white px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-medium">
+            <button 
+              onClick={handleConsultationClick}
+              className="bg-law-gold text-white px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-medium"
+            >
               Free Consultation
             </button>
           </div>
@@ -77,8 +88,11 @@ const Header = () => {
                 </a>
               ))}
               <div className="pt-4 border-t border-gray-200">
-                <p className="text-law-navy font-medium mb-2">0161 505 1736</p>
-                <button className="bg-law-gold text-white px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-medium w-full">
+                <p className="text-law-navy font-medium mb-2 cursor-pointer" onClick={handlePhoneClick}>0161 505 1736</p>
+                <button 
+                  onClick={handleConsultationClick}
+                  className="bg-law-gold text-white px-6 py-2 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-medium w-full"
+                >
                   Free Consultation
                 </button>
               </div>

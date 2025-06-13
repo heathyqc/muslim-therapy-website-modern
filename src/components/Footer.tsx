@@ -12,6 +12,14 @@ const Footer = () => {
     'Workplace Harassment'
   ];
 
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:admin@employmentlawpractitioners.co.uk';
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:01615051736';
+  };
+
   return (
     <footer className="bg-law-navy text-white py-16">
       <div className="container mx-auto px-4">
@@ -32,11 +40,11 @@ const Footer = () => {
               for employees and employers across the UK for over 25 years.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center space-x-3 text-sm">
+              <div className="flex items-center space-x-3 text-sm cursor-pointer" onClick={handlePhoneClick}>
                 <Phone className="w-4 h-4 text-law-gold" />
                 <span>0161 505 1736</span>
               </div>
-              <div className="flex items-center space-x-3 text-sm">
+              <div className="flex items-center space-x-3 text-sm cursor-pointer" onClick={handleEmailClick}>
                 <Mail className="w-4 h-4 text-law-gold" />
                 <span>admin@employmentlawpractitioners.co.uk</span>
               </div>
@@ -75,8 +83,21 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal Info - Column removed since all items were to be deleted */}
-          <div></div>
+          {/* Contact CTA */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6">Get in Touch</h4>
+            <div className="space-y-4">
+              <p className="text-gray-300 text-sm">
+                Ready to discuss your employment law needs? Contact us today for expert advice.
+              </p>
+              <button 
+                onClick={handleEmailClick}
+                className="bg-law-gold text-law-navy px-6 py-3 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-semibold w-full"
+              >
+                Free Consultation
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="border-t border-law-navy-light mt-12 pt-8">
@@ -85,11 +106,16 @@ const Footer = () => {
               © 2024 Employment Law Practitioners. All rights reserved.
             </div>
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-gray-300 hover:text-law-gold transition-colors duration-200">
+              <a 
+                href="https://www.employmentlawpractitioners.co.uk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-law-gold transition-colors duration-200"
+              >
                 <ExternalLink className="w-5 h-5" />
               </a>
               <div className="text-xs text-gray-400">
-                Website designed for WordPress integration
+                www.employmentlawpractitioners.co.uk
               </div>
             </div>
           </div>

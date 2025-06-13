@@ -3,6 +3,14 @@ import React from 'react';
 import { ArrowRight, Shield, Award, Users, Eye } from 'lucide-react';
 
 const Hero = () => {
+  const handleConsultationClick = () => {
+    window.location.href = 'mailto:admin@employmentlawpractitioners.co.uk?subject=Free Case Assessment Request';
+  };
+
+  const handleCallClick = () => {
+    window.location.href = 'tel:01615051736';
+  };
+
   return (
     <section id="home" className="relative bg-gradient-to-br from-law-navy to-law-navy-light text-white py-20 lg:py-32">
       <div className="container mx-auto px-4">
@@ -20,24 +28,23 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-law-gold text-law-navy px-8 py-4 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-semibold flex items-center justify-center group">
+              <button 
+                onClick={handleConsultationClick}
+                className="bg-law-gold text-law-navy px-8 py-4 rounded-lg hover:bg-law-gold-dark transition-colors duration-200 font-semibold flex items-center justify-center group"
+              >
                 Free Case Assessment
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-law-navy transition-colors duration-200 font-semibold">
+              <button 
+                onClick={handleCallClick}
+                className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-law-navy transition-colors duration-200 font-semibold"
+              >
                 Call Now: 0161 505 1736
               </button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-law-navy-light">
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-2">
-                  <Shield className="w-6 h-6 text-law-gold" />
-                </div>
-                <div className="text-2xl font-bold">25+</div>
-                <div className="text-sm text-gray-300">Years Experience</div>
-              </div>
+            <div className="grid grid-cols-2 gap-6 pt-8 border-t border-law-navy-light">
               <div className="text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Award className="w-6 h-6 text-law-gold" />
