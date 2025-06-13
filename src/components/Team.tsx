@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Mail, Phone, Award } from 'lucide-react';
+import { Mail, Phone, Award, Eye } from 'lucide-react';
 
 const Team = () => {
   const teamMembers = [
@@ -58,6 +57,11 @@ const Team = () => {
                 <div className="absolute top-4 right-4 bg-law-gold text-white px-3 py-1 rounded-full text-sm font-semibold">
                   {member.experience}
                 </div>
+                {index === 0 && (
+                  <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                    <Eye className="w-6 h-6 text-white" />
+                  </div>
+                )}
               </div>
               
               <div className="p-6">
