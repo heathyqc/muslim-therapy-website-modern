@@ -25,7 +25,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-law-navy transition-colors duration-200 font-semibold">
-                Call Now: 020 7123 4567
+                Call Now: 0161 505 1736
               </button>
             </div>
 
