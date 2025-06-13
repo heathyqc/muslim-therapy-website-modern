@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Mail, Phone, Award } from 'lucide-react';
 
@@ -8,7 +9,7 @@ const Team = () => {
       title: 'Senior Partner',
       speciality: 'Employment Tribunal Specialist',
       experience: '15 years',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=400&fit=crop',
       email: 'sarah.johnson@employmentlawpractitioners.co.uk',
       phone: '020 7123 4568'
     },
