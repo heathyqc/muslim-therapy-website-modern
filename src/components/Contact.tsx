@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
@@ -16,7 +15,7 @@ const Contact = () => {
     console.log('Form submitted:', formData);
     
     // Create mailto link with form data
-    const recipient = 'n-aslam@outlook.com';
+    const recipient = 'admin@employmentlawpractitioners.co.uk';
     const subject = encodeURIComponent(`Contact Form: ${formData.subject}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\n` +
@@ -84,7 +83,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-law-gold mt-1" />
                   <div>
                     <h4 className="font-semibold text-law-navy mb-1">Email</h4>
-                    <p className="text-gray-600">n-aslam@outlook.com</p>
+                    <p className="text-gray-600">admin@employmentlawpractitioners.co.uk</p>
                   </div>
                 </div>
 
