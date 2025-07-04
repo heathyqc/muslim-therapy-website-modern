@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -20,11 +19,16 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      console.log('Sending contact form data:', formData);
+      
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: formData,
       });
 
+      console.log('Supabase function response:', { data, error });
+
       if (error) {
+        console.error('Supabase function error:', error);
         throw error;
       }
 
@@ -45,7 +49,7 @@ const Contact = () => {
       console.error('Error sending message:', error);
       toast({
         title: "Error sending message",
-        description: "Please try again or contact us directly.",
+        description: "Please try again or contact us directly at admin@employmentlawpractitioners.co.uk",
         variant: "destructive",
       });
     } finally {
