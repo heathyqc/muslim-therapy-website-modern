@@ -56,7 +56,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Contact Form <noreply@akamai-legal.com>',
+        from: 'Akamai Legal <onboarding@resend.dev>',
         to: ['heathcliffqc@gmail.com'],
         subject: `Contact Form: ${subject}`,
         html: `
