@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,24 +11,51 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    
-    // Create mailto link with form data
-    const recipient = 'n-aslam@outlook.com';
-    const subject = encodeURIComponent(`Contact Form: ${formData.subject}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Subject: ${formData.subject}\n\n` +
-      `Message:\n${formData.message}`
-    );
-    
-    const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/functions/v1/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.error || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -203,9 +231,10 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="bg-law-navy text-white px-8 py-4 rounded-lg hover:bg-law-navy-light transition-colors duration-200 font-semibold flex items-center"
+                  disabled={isSubmitting}
+                  className="bg-law-navy text-white px-8 py-4 rounded-lg hover:bg-law-navy-light transition-colors duration-200 font-semibold flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                   <Send className="ml-2 w-5 h-5" />
                 </button>
               </form>
