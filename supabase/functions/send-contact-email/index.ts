@@ -49,7 +49,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'Contact Form <noreply@employmentlawpractitioners.co.uk>',
-        to: ['n-aslam@outlook.com'],
+        to: ['heathcliffqc@gmail.com'],
         subject: `Contact Form: ${subject}`,
         html: `
           <h2>New Contact Form Submission</h2>
