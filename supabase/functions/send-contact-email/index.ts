@@ -7,16 +7,22 @@ const corsHeaders = {
 }
 
 serve(async (req) => {
+  console.log('Contact email function invoked with method:', req.method);
+  
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
 
   try {
-    const { name, email, phone, subject, message } = await req.json()
+    const requestBody = await req.json();
+    console.log('Request body received:', requestBody);
+    
+    const { name, email, phone, subject, message } = requestBody;
 
     // Validate required fields
     if (!name || !email || !subject || !message) {
+      console.error('Missing required fields:', { name: !!name, email: !!email, subject: !!subject, message: !!message });
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
         { 
@@ -40,6 +46,8 @@ serve(async (req) => {
       )
     }
 
+    console.log('Attempting to send email via Resend API');
+
     // Send email using Resend
     const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -48,7 +56,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Contact Form <noreply@employmentlawpractitioners.co.uk>',
+        from: 'Contact Form <noreply@akamai-legal.com>',
         to: ['heathcliffqc@gmail.com'],
         subject: `Contact Form: ${subject}`,
         html: `
@@ -63,11 +71,14 @@ serve(async (req) => {
       }),
     })
 
+    const responseText = await emailResponse.text();
+    console.log('Resend API response status:', emailResponse.status);
+    console.log('Resend API response:', responseText);
+
     if (!emailResponse.ok) {
-      const errorData = await emailResponse.text()
-      console.error('Resend API error:', errorData)
+      console.error('Resend API error:', responseText);
       return new Response(
-        JSON.stringify({ error: 'Failed to send email' }),
+        JSON.stringify({ error: 'Failed to send email', details: responseText }),
         { 
           status: 500, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -75,8 +86,8 @@ serve(async (req) => {
       )
     }
 
-    const emailData = await emailResponse.json()
-    console.log('Email sent successfully:', emailData)
+    const emailData = JSON.parse(responseText);
+    console.log('Email sent successfully:', emailData);
 
     return new Response(
       JSON.stringify({ 
@@ -90,9 +101,9 @@ serve(async (req) => {
     )
 
   } catch (error) {
-    console.error('Error in send-contact-email function:', error)
+    console.error('Error in send-contact-email function:', error);
     return new Response(
-      JSON.stringify({ error: 'Internal server error' }),
+      JSON.stringify({ error: 'Internal server error', details: error.message }),
       { 
         status: 500, 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
