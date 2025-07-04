@@ -64,10 +64,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				law: {
-					navy: '#1e3a8a',
-					'navy-light': '#3b82f6',
-					gold: '#d97706',
-					'gold-dark': '#b45309',
+					navy: '#000000',
+					'navy-light': '#333333',
+					gold: '#dc2626',
+					'gold-dark': '#b91c1c',
 					gray: '#f8fafc',
 					accent: '#0ea5e9'
 				}
