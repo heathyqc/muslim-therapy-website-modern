@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Scale, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Scale, Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const services = [
@@ -104,19 +104,6 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-300">
               © 2024 Akamai Legal. All rights reserved.
-            </div>
-            <div className="flex items-center space-x-6">
-              <a 
-                href="https://www.employmentlawpractitioners.co.uk" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-law-gold transition-colors duration-200"
-              >
-                <ExternalLink className="w-5 h-5" />
-              </a>
-              <div className="text-xs text-gray-400">
-                www.employmentlawpractitioners.co.uk
-              </div>
             </div>
           </div>
         </div>
