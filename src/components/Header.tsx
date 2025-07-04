@@ -32,8 +32,8 @@ const Header = () => {
               <Scale className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-law-navy">Employment Law</h1>
-              <p className="text-sm text-gray-600">Practitioners</p>
+              <h1 className="text-xl font-bold text-law-navy">Akamai Legal</h1>
+              <p className="text-sm text-gray-600">Employment Law Specialists</p>
             </div>
           </div>
 

@@ -31,8 +31,8 @@ const Footer = () => {
                 <Scale className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Employment Law</h3>
-                <p className="text-sm text-gray-300">Practitioners</p>
+                <h3 className="text-xl font-bold">Akamai Legal</h3>
+                <p className="text-sm text-gray-300">Employment Law Specialists</p>
               </div>
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -50,7 +50,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="w-4 h-4 text-law-gold" />
-                <span>ELP, Ancoats Street, Manchester, Lancashire M4 6DN</span>
+                <span>Akamai Legal, Ancoats Street, Manchester, Lancashire M4 6DN</span>
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ const Footer = () => {
         <div className="border-t border-law-navy-light mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-300">
-              © 2024 Employment Law Practitioners. All rights reserved.
+              © 2024 Akamai Legal. All rights reserved.
             </div>
             <div className="flex items-center space-x-6">
               <a 

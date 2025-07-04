@@ -37,7 +37,7 @@ const About = () => {
                 Leading Employment Law Expertise
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                Employment Law Practitioners has been at the forefront of UK employment law for over two decades. 
+                Akamai Legal has been at the forefront of UK employment law for over two decades. 
                 Our team of specialist solicitors provides expert legal advice and representation to both 
                 employees and employers across all aspects of employment law.
               </p>
