@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Briefcase, Users, FileText, Scale, Shield, AlertTriangle } from 'lucide-react';
 
@@ -81,12 +82,6 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <button className="text-law-navy font-semibold hover:text-law-gold transition-colors duration-200">
-                  Learn More →
-                </button>
-              </div>
             </div>
           ))}
         </div>
@@ -96,3 +91,4 @@ const Services = () => {
 };
 
 export default Services;
+
