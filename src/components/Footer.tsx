@@ -50,7 +50,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="w-4 h-4 text-law-gold" />
-                <span>Akamai Legal, Ancoats Street, Manchester, Lancashire M4 6DN</span>
+                <span>Akamai Legal, 124 Fairway, Castleton, Rochdale OL11 3BZ</span>
               </div>
             </div>
           </div>
