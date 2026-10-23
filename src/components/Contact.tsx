@@ -121,8 +121,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-law-navy mb-1">Office Hours</h4>
                     <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 10:00 AM - 2:00 PM<br />
+                      Monday - Friday: 9:00 AM - 5:00 PM<br />
+                      Saturday: Closed<br />
                       Sunday: Emergency only
                     </p>
                   </div>
