@@ -123,7 +123,7 @@ const Contact = () => {
                     <p className="text-gray-600">
                       Monday - Friday: 9:00 AM - 5:00 PM<br />
                       Saturday: Closed<br />
-                      Sunday: Emergency only
+                      Sunday: Closed
                     </p>
                   </div>
                 </div>
