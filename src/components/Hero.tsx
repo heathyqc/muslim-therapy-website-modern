@@ -4,7 +4,7 @@ import { ArrowRight, Shield, Award, Users, Eye } from 'lucide-react';
 
 const Hero = () => {
   const handleConsultationClick = () => {
-    window.location.href = 'mailto:admin@employmentlawpractitioners.co.uk?subject=Free Case Assessment Request';
+    window.location.href = 'mailto:nosheen@akamailegal.co.uk?subject=Free Case Assessment Request';
   };
 
   const handleCallClick = () => {

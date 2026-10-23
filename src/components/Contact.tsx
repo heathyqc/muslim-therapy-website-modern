@@ -50,7 +50,7 @@ const Contact = () => {
       console.error('Error sending message:', error);
       toast({
         title: "Error sending message",
-        description: "Please try again or contact us directly at admin@employmentlawpractitioners.co.uk",
+        description: "Please try again or contact us directly at nosheen@akamailegal.co.uk",
         variant: "destructive",
       });
     } finally {
@@ -112,7 +112,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-law-gold mt-1" />
                   <div>
                     <h4 className="font-semibold text-law-navy mb-1">Email</h4>
-                    <p className="text-gray-600">admin@employmentlawpractitioners.co.uk</p>
+                    <p className="text-gray-600">nosheen@akamailegal.co.uk</p>
                   </div>
                 </div>
 
