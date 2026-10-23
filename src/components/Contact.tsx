@@ -90,10 +90,10 @@ const Contact = () => {
                     <h4 className="font-semibold text-law-navy mb-1">Office Address</h4>
                     <p className="text-gray-600">
                       Akamai Legal<br />
-                      124 Fairway<br />
-                      Castleton<br />
-                      Rochdale<br />
-                      OL11 3BZ<br />
+                      Ancoats Street<br />
+                      Manchester<br />
+                      Lancashire<br />
+                      M4 6DN<br />
                       United Kingdom
                     </p>
                   </div>
