@@ -13,7 +13,7 @@ const Footer = () => {
   ];
 
   const handleEmailClick = () => {
-    window.location.href = 'mailto:admin@employmentlawpractitioners.co.uk';
+    window.location.href = 'mailto:nosheen@akamailegal.co.uk';
   };
 
   const handlePhoneClick = () => {
@@ -46,7 +46,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm cursor-pointer" onClick={handleEmailClick}>
                 <Mail className="w-4 h-4 text-law-gold" />
-                <span>admin@employmentlawpractitioners.co.uk</span>
+                <span>nosheen@akamailegal.co.uk</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="w-4 h-4 text-law-gold" />

@@ -14,7 +14,7 @@ const Header = () => {
   ];
 
   const handleConsultationClick = () => {
-    window.location.href = 'mailto:admin@employmentlawpractitioners.co.uk?subject=Free Consultation Request';
+    window.location.href = 'mailto:nosheen@akamailegal.co.uk?subject=Free Consultation Request';
   };
 
   const handlePhoneClick = () => {
